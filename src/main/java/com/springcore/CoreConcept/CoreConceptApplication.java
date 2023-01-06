@@ -32,6 +32,12 @@ public class CoreConceptApplication {
 
 		Test testBean = applicationContext.getBean(Test.class);
 		testBean.testing();
+
+//		using qualifier
+		Animal dog = applicationContext.getBean("dog",Animal.class);
+		dog.play();
+		Animal cat = applicationContext.getBean("cat",Animal.class);
+		cat.play();
 	}
 
 }

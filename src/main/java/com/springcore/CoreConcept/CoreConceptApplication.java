@@ -4,11 +4,14 @@ import com.springcore.CoreConcept.coupling.Animal;
 import com.springcore.CoreConcept.coupling.Cat;
 import com.springcore.CoreConcept.coupling.Dog;
 import com.springcore.CoreConcept.coupling.Person;
+import extraPackage.Test;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
+@ComponentScan(basePackages = {"com.springcore.CoreConcept","extraPackage"})
 public class CoreConceptApplication {
 
 //	3 steps for configuring spring core
@@ -26,6 +29,9 @@ public class CoreConceptApplication {
 		ApplicationContext applicationContext = SpringApplication.run(CoreConceptApplication.class, args);
 		Person personBean = applicationContext.getBean(Person.class);
 		personBean.animalPlay();
+
+		Test testBean = applicationContext.getBean(Test.class);
+		testBean.testing();
 	}
 
 }

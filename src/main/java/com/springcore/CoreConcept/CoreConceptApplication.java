@@ -1,5 +1,6 @@
 package com.springcore.CoreConcept;
 
+import com.springcore.CoreConcept.beanScope.Pepsi;
 import com.springcore.CoreConcept.coupling.Animal;
 import com.springcore.CoreConcept.coupling.Cat;
 import com.springcore.CoreConcept.coupling.Dog;
@@ -27,17 +28,34 @@ public class CoreConceptApplication {
 //		Person person = new Person(animal);
 //		person.animalPlay();
 		ApplicationContext applicationContext = SpringApplication.run(CoreConceptApplication.class, args);
-		Person personBean = applicationContext.getBean(Person.class);
-		personBean.animalPlay();
-
-		Test testBean = applicationContext.getBean(Test.class);
-		testBean.testing();
+//		Person personBean = applicationContext.getBean(Person.class);
+//		personBean.animalPlay();
+//
+//		Test testBean = applicationContext.getBean(Test.class);
+//		testBean.testing();
 
 //		using qualifier
-		Animal dog = applicationContext.getBean("dog",Animal.class);
-		dog.play();
-		Animal cat = applicationContext.getBean("cat",Animal.class);
-		cat.play();
+//		Animal dog = applicationContext.getBean("dog",Animal.class);
+//		dog.play();
+//		Animal cat = applicationContext.getBean("cat",Animal.class);
+//		cat.play();
+
+//		bean scope
+
+		// first request for Pepsi
+		Pepsi pepsiBean = applicationContext.getBean(Pepsi.class);
+		System.out.println(pepsiBean);
+		pepsiBean.drink();
+
+		// Second request for Pepsi
+		Pepsi pepsiBean1 = applicationContext.getBean(Pepsi.class);
+		System.out.println(pepsiBean1);
+		pepsiBean1.drink();
+
+		// third request for Pepsi
+		Pepsi pepsiBean2 = applicationContext.getBean(Pepsi.class);
+		System.out.println(pepsiBean2);
+		pepsiBean2.drink();
 	}
 
 }

@@ -43,19 +43,19 @@ public class CoreConceptApplication {
 //		bean scope
 
 		// first request for Pepsi
-		Pepsi pepsiBean = applicationContext.getBean(Pepsi.class);
-		System.out.println(pepsiBean);
-		pepsiBean.drink();
+//		Pepsi pepsiBean = applicationContext.getBean(Pepsi.class);
+//		System.out.println(pepsiBean);
+//		pepsiBean.drink();
 
 		// Second request for Pepsi
-		Pepsi pepsiBean1 = applicationContext.getBean(Pepsi.class);
-		System.out.println(pepsiBean1);
-		pepsiBean1.drink();
+//		Pepsi pepsiBean1 = applicationContext.getBean(Pepsi.class);
+//		System.out.println(pepsiBean1);
+//		pepsiBean1.drink();
 
 		// third request for Pepsi
-		Pepsi pepsiBean2 = applicationContext.getBean(Pepsi.class);
-		System.out.println(pepsiBean2);
-		pepsiBean2.drink();
+//		Pepsi pepsiBean2 = applicationContext.getBean(Pepsi.class);
+//		System.out.println(pepsiBean2);
+//		pepsiBean2.drink();
 	}
 
 }
